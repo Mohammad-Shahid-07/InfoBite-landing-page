@@ -8,6 +8,7 @@
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   overflow-x: hidden;
@@ -28,25 +29,75 @@ nav span svg {
 }
 
 .nav-list {
-  display: flex;
-  
+  display: flex ;
   position: absolute;
   top: 10px;
   right: 0;
   z-index: 1000;
  
 }
+.nav-list a:hover {
+  font-size: 2rem;
+  padding: 1rem 2rem; 
+  background: linear-gradient(rgb(216, 5, 216) , rgb(127, 32, 92));
+  border-radius: 15px;
+}
 li {
   list-style: none;
   padding: 1rem;
 }
- a {
+ a 
+ {
+  transition: all .3s ease;
   color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 1.5rem;
   
 }
+.hamburger{
+  display: none;
+  position: absolute;
+  z-index: 1002;
+  top: 15px;
+  right: 30px;
+  user-select: none;
+  appearance: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.hamburger span{
+  display: block;
+  width: 33px;
+  height: 5px;
+  margin-bottom: 5px;
+  /* position: relative; */
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  z-index: 1000;
+  transform-origin: 0 0;
+  transition: .4s;
+}
+.hamburger:hover span:nth-child(2){
+  transform: translateX(10px);
+  background-color: #ff00a2;
+}
+.hamburger.active span:nth-child(1){
+  transform: translate(0, -2px) rotate(45deg);
+}
+.hamburger.active span:nth-child(3){
+  transform: translate(-4px, 2px) rotate(-45deg);
 
+}
+.hamburger.active span:nth-child(2){
+  opacity: 0;
+  transform: translateX(15px);
+
+
+}
+.hamburger.active:hover span{
+  background: #00e1ff;
+}
 /* waves animation */
 .section{
   position: relative;
@@ -114,11 +165,13 @@ li {
 }
 
 header {
+
   min-height: 100vh;
   display: flex;
   justify-content: center;
   overflow: hidden;
   align-items: center;
+  margin-top: -10vh;
 }
 .header-text h1 {
   font-size: 5rem;
@@ -414,7 +467,7 @@ footer {
   justify-content: space-between;
 }
 .section-one {
-  width: 35vw;
+  width: 40vw;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -429,6 +482,8 @@ footer {
 }
 .sectwo {
   display: flex;
+  color: white;
+
   text-align: center;
   border-radius: 50px 80px 0px 85px / 0px 85px 0px 80px;
 }
@@ -501,7 +556,36 @@ footer {
   .text-content {
     text-align: center;
   }
+   .nav-list{
+    display: none;
 
+  } 
+  .nav-list-menu{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+   justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    top: 0;
+    min-height: 50vh;
+    background: linear-gradient(#e00af4, #5d1142);
+
+    
+  }
+  .nav-list-menu a{
+    font-size: 2rem;
+   padding: 1rem 2rem;
+   border-radius: 15px;
+    
+  }
+  .nav-list-menu a:hover{
+    color: black;
+    background: white;
+  }
+  .hamburger{
+    display: block;
+  }
   
   
 }
