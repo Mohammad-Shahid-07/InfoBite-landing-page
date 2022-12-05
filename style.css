@@ -1,0 +1,516 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  overflow-x: hidden;
+}
+nav {
+  position: relative;
+}
+nav span svg {
+  position: absolute;
+  z-index: -1;
+  top: -4vh;
+}
+.left {
+  position: absolute;
+  padding: 1rem;
+  z-index: 1000;
+  top: 15px;
+}
+
+.nav-list {
+  display: flex;
+  
+  position: absolute;
+  top: 10px;
+  right: 0;
+  z-index: 1000;
+ 
+}
+li {
+  list-style: none;
+  padding: 1rem;
+}
+ a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.5rem;
+  
+}
+
+/* waves animation */
+.section{
+  position: relative;
+  margin-top: -4px ;
+  height: 150px;
+  overflow-x: hidden;
+
+}
+.section .wave{
+  position: absolute;
+  top: 1%;
+  right: 0%;
+  height: 100px;
+  width: 100vw;
+  background: url(./img/Vector\ 10.svg);
+  background-size: 900px 100px;
+  
+}
+.section .wave.wave1{
+  animation: animate 30s alternate-reverse infinite;
+  z-index: 100;
+  opacity: 1;
+  animation-delay: -5s;
+  top: 0;
+}
+.section .wave.wave2{
+
+  animation: animate2 15s alternate-reverse infinite;
+
+  z-index: 99;
+  opacity: .2;
+  animation-delay: 2s;
+  top: 10px;
+}
+.section .wave.wave3{
+  animation: animate2 10s alternate-reverse infinite;
+  z-index: 98;
+  opacity: 0.3;
+  animation-delay: 5s;
+  top: 15px;
+
+}
+.section .wave.wave4{
+  animation: animate2 5s  infinite alternate-reverse;
+  z-index: 98;
+  opacity: 0.3;
+  animation-delay: 1s;
+  top: 20px;
+
+}
+@keyframes animate {
+ 0%{
+  background-position-x:0 ;
+ }
+  100%{
+  background-position: 100px;
+ }
+}
+@keyframes animate2 {
+ 0%{
+  background-position-x:0 ;
+ } 100%{
+  background-position: -1000px;
+ }
+}
+
+header {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+}
+.header-text h1 {
+  font-size: 5rem;
+  margin: 1rem;
+}
+.header-text h3 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.header-img svg {
+  /* margin-top: 1vh; */
+  width: 40vw;
+  z-index: -1;
+}
+.header-text button {
+  padding: 1.5vh 1.7vw;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 1rem;
+  border: none;
+  color: White;
+  background: #c63a94;
+  transition: all 0.3s ease;
+}
+.header-text button:hover {
+  color: rgb(255, 255, 255);
+  background: #911865;
+}
+
+.about-us {
+  position: relative;
+}
+.about-us::after,
+.servies::after,
+.internship::after {
+  content: "";
+  width: 100vw;
+  z-index: -1;
+  top: 0%;
+  position: absolute;
+  display: block;
+  background: linear-gradient(#963d9e, #c63a94);
+}
+.about-us::after {
+  clip-path: polygon(50% 0%, 100% 0, 100% 50%, 0 100%, 0 0);
+  height: 120%;
+}
+.servies::after {
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 0 100%, 0 0);
+  height: 102%;
+}
+.internship::after {
+  clip-path: polygon(0 44%, 100% 0, 100% 100%, 0% 100%);
+
+  height: 102%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-left: 2vw;
+  width: 90vw;
+}
+.text-content h2,
+.text-content p {
+  /* font-size: 2rem; */
+  color: rgb(233, 218, 214);
+  font-size: 2.5rem;
+  padding: 2vw;
+}
+.text-content p {
+  font-size: 1.8rem;
+  border-radius: 5px;
+  
+}
+.content > div > img {
+  width: 40vw;
+}
+
+section {
+  position: relative;
+  /* margin-top: 200px; */
+}
+
+.containergrid {
+  display: grid;
+
+  margin-bottom: 8rem;
+}
+.gridone {
+  grid-template-columns: 5fr 4fr 2fr;
+}
+.gridtwo {
+  grid-template-columns: 6fr 4fr 5fr;
+}
+.container {
+  background-color: white;
+  box-shadow: 0px 1px 12px 5px rgba(36, 33, 33, 0.442);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+.container:hover {
+  box-shadow: 0px 10px 15px 5px rgba(36, 33, 33, 0.562);
+}
+.text-container {
+  min-width: 30vw;
+}
+.container > div img {
+  margin-bottom: -40px;
+  margin-left: -200px;
+
+  /* width: 40vw; */
+}
+
+.heading::after {
+  content: "";
+  background: linear-gradient(#963d9e, #c63a94);
+  height: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 40%;
+  z-index: -1;
+
+  animation: heading 0.9s linear infinite alternate-reverse;
+}
+@keyframes heading {
+  from {
+    width: 1rem;
+  }
+  to {
+    width: 20%;
+    height: 100%;
+  }
+}
+.heading {
+  display: grid;
+  align-items: center;
+
+  justify-content: center;
+  position: relative;
+  font-size: 2rem;
+  margin: 5rem;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.text-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+ p {
+  font-size: 2rem;
+ color: rgb(88, 82, 80);
+
+}
+.btn {
+  border: none;
+  color: white;
+  background: #963d9e;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  flex-shrink: 1;
+  border-radius: 5px;
+}
+
+
+.internship-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: space-evenly;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 5rem 2rem;
+  background-size: cover;
+  background-position: center;
+}
+.one {
+  background-image: url(./img/wp6350578-website-development-wallpapers.jpg);
+}
+.two {
+  background-image: url(./img/wp8811886-adobe-photoshop-wallpapers.jpg);
+}
+.three {
+  background-image: url(./img/wp5592833-java-logo-wallpapers.jpg);
+}
+.four {
+  background-image: url(./img/wp6420314-amoled-android-green-wallpapers.jpg);
+}
+.five {
+  background-image: url(./img/wp2700114-data-science-wallpapers.jpg);
+}
+.six {
+  background-image: url(./img/wp3929764-cloud-computing-wallpapers.jpg);
+}
+.card-content {
+  position: absolute;
+  top: 0%;
+  backdrop-filter: blur(50px);
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+.card:hover > .card-content,
+.card-content:hover {
+  padding: 2rem;
+  left: -20px;
+  width: 110%;
+  z-index: 1;
+  top: 60%;
+}
+.card-content h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.card-content p {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.team {
+  margin-top: 200px;
+}
+.team-card {
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 1px 12px 5px rgba(36, 33, 33, 0.442);
+}
+
+.team-card h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+.team-card p {
+  font-size: 2rem;
+  font-weight: 500;
+  
+}
+.social {
+  margin-top: 20px;
+}
+.contact .content img{
+  width: 50vw;
+ }
+.contact {
+  margin-top: 11rem;
+  padding-bottom: 4rem;
+  background: #ececec;
+}
+form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+input,
+textarea {
+  border: none;
+  background: #ececec;
+
+  font-size: 2rem;
+  margin: 2rem;
+  border-bottom: 2px solid;
+}
+textarea {
+  height: 200px;
+}
+footer {
+  display: flex;
+
+  justify-content: space-between;
+}
+.section-one {
+  width: 35vw;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#d22ee0, #662e52);
+  color: white;
+}
+.section-one h3 {
+  font-size: 1.5rem;
+}
+.secone {
+  border-radius: 50px 0px 80px 0px / 80px 0px 80px 80px;
+}
+.sectwo {
+  display: flex;
+  text-align: center;
+  border-radius: 50px 80px 0px 85px / 0px 85px 0px 80px;
+}
+.contact-info div {
+  display: flex;
+  margin-top: 2.5rem;
+}
+
+
+.section-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+}
+.section-two > img {
+  width: 80%;
+  height: 80%;
+  object-fit: fill;
+}
+.section-two div {
+  display: flex;
+  flex-direction: column;
+}
+/* Media Querris */
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .container > div img {
+    width: 38vw;
+  }
+  .container {
+    width: 60vw;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  footer {
+   
+    flex-direction: column;
+    
+  }
+  .section-one,.section-two{
+    width: 100vw;
+  }
+  .section-two img{
+    width: 20%;
+  }
+  .container > div img {
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 670px) {
+  html {
+    font-size: 55%;
+  }
+  header,
+  .content {
+    flex-direction: column-reverse;
+  }
+  .about-us{
+    padding-bottom: 15rem;
+  }
+  
+  .header-text,
+  .text-content {
+    text-align: center;
+  }
+
+  
+  
+}
+@media screen and (max-width: 550px) {
+  .container > div img {
+    margin-left: 0px;
+    height: 100%;
+  }
+  .container{
+    min-width: 80vw;
+  }
+}
